@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css'; // Import CSS file
-
+import { NavLink } from 'react-router-dom';
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -19,10 +19,10 @@ const Navbar = () => {
         <div className="line"></div>
       </div>
       <ul className={`navbar-list ${showMenu ? 'show' : ''}`}>
-        <li className="navbar-item"><a href="/" className="navbar-link">Home</a></li>
-        <li className="navbar-item"><a href="/about" className="navbar-link">About</a></li>
-        <li className="navbar-item"><a href="/services" className="navbar-link">Services</a></li>
-        <li className="navbar-item"><a href="/contact" className="navbar-link">Contact</a></li>
+        <li className="navbar-item"><NavLink to = "/" className="navbar-link">Home</NavLink></li>
+        <li className="navbar-item"><NavLink to = "/about" className="navbar-link">About</NavLink></li>
+        <li className="navbar-item"><NavLink to = "/services" className="navbar-link">Services</NavLink></li>
+        <li className="navbar-item"><NavLink to = "/contact" className="navbar-link">Contact</NavLink></li>
       </ul>
     </nav>
   );
