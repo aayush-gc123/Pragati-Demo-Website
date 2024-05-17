@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, UNSAFE_DataRouterContext } from 'react-router-dom';
 // import About from './components/About';
 // import Navbar from './components/Navbar'
 // import Footer from './components/Footer';
@@ -13,7 +13,15 @@ import HomePage from './Home/HomePage';
 import Contact from './components/Contact/Contact';
 // import Contact from './components/Contact/Contact';
 
+const name = () => {
+  return new Promise((resolve ,reject) => {
+    
+  })
+}
 function App() {
+  
+
+2
   return (
     <>
       <BrowserRouter>

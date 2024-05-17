@@ -3,6 +3,7 @@ import Navbar from '../../Navbar/Navbar'
 import Footer from '../../Footer/Footer'
 import About from '../../About/About'
 import Slider from '../Slider/Sliders'
+import Facilities from '../Facilities/facilities'
 
 
 const HomePage = () => {
@@ -16,9 +17,12 @@ const HomePage = () => {
     
   return (
     <div>
+
 <Navbar/>
+<Facilities/>
 <Slider images={images}/>
 <About/>
+
 
     </div>
   )
