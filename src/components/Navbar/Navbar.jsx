@@ -23,6 +23,7 @@ const Navbar = () => {
         <li className="navbar-item"><NavLink to = "/about" className="navbar-link">About</NavLink></li>
         <li className="navbar-item"><NavLink to = "/services" className="navbar-link">Services</NavLink></li>
         <li className="navbar-item"><NavLink to = "/contact" className="navbar-link">Contact</NavLink></li>
+        <li className="navbar-item"><NavLink to = "/gallery" className="navbar-link">Gallery</NavLink></li>
       </ul>
     </nav>
   );

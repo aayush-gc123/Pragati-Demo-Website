@@ -1,0 +1,127 @@
+/* Contact Section */
+.contact-section {
+    padding: 80px 20px;
+    background-color: #f5f5f5;
+    font-family: 'Roboto', Arial, sans-serif;
+  }
+  
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  .contact-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #555;
+  }
+  
+  .contact-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  
+  .contact-form form {
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .button-container {
+    text-align: center;
+  }
+  
+  .contact-form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .contact-details {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  
+  .detail-item {
+    max-width: 300px;
+  }
+  
+  .detail-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+  
+  .detail-item p {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .map {
+    width: 100%;
+    height: 450px;
+    margin-top: 40px;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .contact-details {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .detail-item {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    .contact-form {
+      flex-direction: column;
+    }
+  }
+  

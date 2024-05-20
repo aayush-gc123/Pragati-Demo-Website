@@ -5,13 +5,13 @@ import { BrowserRouter, Routes, Route, UNSAFE_DataRouterContext } from 'react-ro
 // import Footer from './components/Footer';
 // import Services from './components/Services';
 // import HomePage from './components/HomePage';
-import About from './components/About/About';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Services from './components/Service/Services';
 import HomePage from './Home/HomePage';
 import Contact from './components/Contact/Contact';
-// import Contact from './components/Contact/Contact';
+import About from './components/About/About';
+import AboutRoute from './components/AboutRoute/AboutRoute';
 
 const name = () => {
   return new Promise((resolve ,reject) => {
@@ -28,9 +28,11 @@ function App() {
       <Navbar />
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/about' element={<About />} />
+          <Route path='/about' element={<AboutRoute/>} />
+          <Route path='/contact' element = {<Contact/>} />
           <Route path = '/services' element = {<Services/>}/>
-          <Route path='/contact' element = {<Contact/>}/>
+     
+          
         </Routes>
        
         <Footer/>
@@ -40,3 +42,5 @@ function App() {
 }
 
 export default App;
+
+
