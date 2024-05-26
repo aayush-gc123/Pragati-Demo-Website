@@ -17,7 +17,7 @@ const About = () => {
       </div>
       <div className="about-content">
         <div className="about-image">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Harvard_University_Widener_Library.jpg" alt="Pragati Secondary School" />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm4Uf9rCsI3hVGTtcfrxdb3jALcBe3f59slWc5bCD8Nw&s" alt="Pragati Secondary School" />
         </div>
         <div className="about-details">
           <div className="mission-vision">
@@ -36,7 +36,7 @@ const About = () => {
               Pragati Secondary School was founded in 2047 B.S. (1999 A.D) with the vision of providing quality education in the local community of Batulechour, Pokhara. Over the years, the school has grown and adapted to meet the educational needs of a diverse student population, continually striving to offer a comprehensive and engaging learning experience.
             </p>
             <div className="principal-message">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Elon_Musk_Royal_Society.jpg" alt="Principal" />
+              <img src="https://scontent.fktm10-1.fna.fbcdn.net/v/t39.30808-6/312385539_5534279266650452_2745975736423770836_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=IIDwuLxGlQQQ7kNvgGW7Su0&_nc_ht=scontent.fktm10-1.fna&oh=00_AYBc1IhUYpAJE_a_W4yx78fjf49305Y3YSr9nGCcmQpwRA&oe=6658FAC9" alt="Principal" />
               <p><strong>Message from the Principal:</strong> "We are committed to nurturing the minds and spirits of our students, preparing them to be thoughtful, responsible, and active members of society."</p>
             </div>
           </div>

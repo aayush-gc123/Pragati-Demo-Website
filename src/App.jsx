@@ -12,6 +12,7 @@ import HomePage from './Home/HomePage';
 import Contact from './components/Contact/Contact';
 import About from './components/About/About';
 import AboutRoute from './components/AboutRoute/AboutRoute';
+import Gallery from './components/Gallery/gallery';
 
 const name = () => {
   return new Promise((resolve ,reject) => {
@@ -31,6 +32,7 @@ function App() {
           <Route path='/about' element={<AboutRoute/>} />
           <Route path='/contact' element = {<Contact/>} />
           <Route path = '/services' element = {<Services/>}/>
+          <Route path='/gallery' element = {<Gallery/>}/>
      
           
         </Routes>

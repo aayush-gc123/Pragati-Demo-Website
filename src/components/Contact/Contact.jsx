@@ -1,25 +1,83 @@
-import React from 'react';
+// src/Contact.js
+import React, { useState } from 'react';
+import { collection, addDoc } from 'firebase/firestore';
 import './Contact.css';
+import { db } from '../../Firebase/firebase';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    alert
+    e.preventDefault();
+    try {
+alert
+      await addDoc(collection(db, 'contacts'), formData);  
+      alert('Message sent successfully');
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      });
+    } catch (err) {
+      console.log("hahahhaaa")
+      console.error('Error adding document: ', err);
+      alert('Error sending message');
+    }
+  };
+  
+
   return (
     <div className="contact-section">
       <div className="contact-container">
         <h2>Contact Us</h2>
         <p>We'd love to hear from you! Please fill out the form below to get in touch with us.</p>
         <div className="contact-form">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your Name" required />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your Name"
+                required
+              />
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="Your Email" required />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Your Email"
+                required
+              />
             </div>
             <div className="form-group">
               <label htmlFor="message">Message</label>
-              <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Your Message"
+                rows="5"
+                required
+              ></textarea>
             </div>
             <button type="submit">Send Message</button>
           </form>
@@ -35,7 +93,7 @@ const Contact = () => {
           </div>
           <div className="detail-item">
             <h3>Email</h3>
-            <p>info@pragatisecondayschool.com</p>
+            <p>info@pragatisecondaryschool.com</p>
           </div>
         </div>
         <div className="map">

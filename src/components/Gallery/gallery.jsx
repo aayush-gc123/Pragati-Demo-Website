@@ -1,73 +1,126 @@
 import React, { useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
 import './gallery.css';
 
 const Gallery = () => {
-  const { className } = useParams();
-  const history = useHistory();
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedClass, setSelectedClass] = useState(null);
+  const classes = [
+    'Nursery', 'KG', 'Class 1', 'Class 2', 'Class 3', 'Class 4',
+    'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12'
+  ];
 
-  const classes = Array.from({ length: 12 }, (_, i) => `Class ${i + 1}`);
-  const photos = className
-    ? Array.from({ length: 10 }, (_, i) => `https://via.placeholder.com/600x400?text=${className}+Photo+${i + 1}`)
-    : [];
-
-  const openLightbox = (imgSrc) => {
-    setSelectedImage(imgSrc);
-    document.body.style.overflow = 'hidden';
+  const photos = {
+    'Nursery': [
+      'https://source.unsplash.com/600x400/?nursery,school',
+      'https://source.unsplash.com/600x400/?kids,play',
+      'https://source.unsplash.com/600x400/?nursery,classroom'
+    ],
+    'KG': [
+      'https://source.unsplash.com/600x400/?kindergarten,school',
+      'https://source.unsplash.com/600x400/?kids,learning',
+      'https://source.unsplash.com/600x400/?kindergarten,classroom'
+    ],
+    'Class 1': [
+      'https://source.unsplash.com/600x400/?class1,school',
+      'https://source.unsplash.com/600x400/?students,classroom',
+      'https://source.unsplash.com/600x400/?class1,learning'
+    ],
+    'Class 2': [
+      'https://source.unsplash.com/600x400/?class2,school',
+      'https://source.unsplash.com/600x400/?students,education',
+      'https://source.unsplash.com/600x400/?class2,learning'
+    ],
+    'Class 3': [
+      'https://source.unsplash.com/600x400/?class3,school',
+      'https://source.unsplash.com/600x400/?students,classroom',
+      'https://source.unsplash.com/600x400/?class3,learning'
+    ],
+    'Class 4': [
+      'https://source.unsplash.com/600x400/?class4,school',
+      'https://source.unsplash.com/600x400/?students,education',
+      'https://source.unsplash.com/600x400/?class4,learning'
+    ],
+    'Class 5': [
+      'https://source.unsplash.com/600x400/?class5,school',
+      'https://source.unsplash.com/600x400/?students,classroom',
+      'https://source.unsplash.com/600x400/?class5,learning'
+    ],
+    'Class 6': [
+      'https://source.unsplash.com/600x400/?class6,school',
+      'https://source.unsplash.com/600x400/?students,education',
+      'https://source.unsplash.com/600x400/?class6,learning'
+    ],
+    'Class 7': [
+      'https://source.unsplash.com/600x400/?class7,school',
+      'https://source.unsplash.com/600x400/?students,classroom',
+      'https://source.unsplash.com/600x400/?class7,learning'
+    ],
+    'Class 8': [
+      'https://source.unsplash.com/600x400/?class8,school',
+      'https://source.unsplash.com/600x400/?students,education',
+      'https://source.unsplash.com/600x400/?class8,learning'
+    ],
+    'Class 9': [
+      'https://source.unsplash.com/600x400/?class9,school',
+      'https://source.unsplash.com/600x400/?students,classroom',
+      'https://source.unsplash.com/600x400/?class9,learning'
+    ],
+    'Class 10': [
+      'https://source.unsplash.com/600x400/?class10,school',
+      'https://source.unsplash.com/600x400/?students,education',
+      'https://source.unsplash.com/600x400/?class10,learning'
+    ],
+    'Class 11': [
+      'https://source.unsplash.com/600x400/?class11,school',
+      'https://source.unsplash.com/600x400/?students,classroom',
+      'https://source.unsplash.com/600x400/?class11,learning'
+    ],
+    'Class 12': [
+      'https://source.unsplash.com/600x400/?class12,school',
+      'https://source.unsplash.com/600x400/?students,education',
+      'https://source.unsplash.com/600x400/?class12,learning'
+    ],
   };
 
-  const closeLightbox = () => {
-    setSelectedImage(null);
-    document.body.style.overflow = 'auto';
-  };
-
-  const goToClassGallery = (className) => {
-    history.push(`/gallery/${className.toLowerCase().replace(/\s/g, '-')}`);
-  };
-
-  const backToGallery = () => {
-    history.push('/gallery');
+  const handleClassClick = (className) => {
+    if (selectedClass === className) {
+      setSelectedClass(null);
+    } else {
+      setSelectedClass(className);
+    }
   };
 
   return (
     <div className="gallery-section">
-      {!className ? (
-        <>
-          <h2>School Photo Gallery</h2>
-          <div className="gallery-container">
-            {classes.map((className, index) => (
-              <div className="gallery-item" key={index} onClick={() => goToClassGallery(className)}>
-                <img src={`https://via.placeholder.com/300x200?text=${className}`} alt={className} />
-                <h3>{className}</h3>
-              </div>
+      <h2>School Gallery</h2>
+      <div className="classes-container">
+        {classes.map((className, index) => (
+          <div 
+            key={index} 
+            className="class-box" 
+            onClick={() => handleClassClick(className)}
+          >
+            <img src={photos[className][0]} alt={`${className} representative`} />
+            <span>{className}</span>
+          </div>
+        ))}
+      </div>
+      {selectedClass && (
+        <div className="photos-container">
+          <h3>{selectedClass} Photos</h3>
+          <div className="photos-grid">
+            {photos[selectedClass].slice(1).map((photo, index) => (
+              <img 
+                key={index} 
+                src={photo} 
+                alt={`${selectedClass} ${index + 1}`} 
+                className="photo"
+              />
             ))}
           </div>
-        </>
-      ) : (
-        <>
-          <h2>{className}</h2>
-          <div className="back-button">
-            <button onClick={backToGallery}>Back to Gallery</button>
-          </div>
-          <div className="gallery-class-container">
-            {photos.map((photo, index) => (
-              <div className="gallery-class-item" key={index}>
-                <img src={photo} alt={`${className} ${index + 1}`} onClick={() => openLightbox(photo)} />
-              </div>
-            ))}
-          </div>
-
-          {selectedImage && (
-            <div className="lightbox" onClick={closeLightbox}>
-              <img src={selectedImage} alt="Selected" />
-            </div>
-          )}
-        </>
+        </div>
       )}
     </div>
   );
 };
 
 export default Gallery;
-
